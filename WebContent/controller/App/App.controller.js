@@ -1,10 +1,11 @@
 sap.ui.define([
    "sap/ui/core/mvc/Controller",
    "sap/m/MessageToast",
-   "sap/ui/model/json/JSONModel"
+   "sap/ui/model/json/JSONModel",
+   "sap/ui/model/resource/ResourceModel"
 ], 
 
-function (Controller, MessageToast, JSONModel) {
+function (Controller, MessageToast, JSONModel, ResourceModel) {
 	"use strict";
    
 	return Controller.extend("sap.ui.walkthrough.controller.App.App", {
@@ -20,6 +21,11 @@ function (Controller, MessageToast, JSONModel) {
 			};
 			var oModel = new JSONModel(oData);
 			
+			/*var i18n = new ResourceModel({
+				bundle
+			})*/
+			
+				
 			this.getView().setModel(oModel);
       },
 		
