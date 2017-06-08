@@ -5,4 +5,15 @@
    <Button
       text="Say Hello"
       press="onShowHello"/>
+   
+   <!-- 
+   		If you remove valueLiveUpdate="true" the databinding effect is made
+   		when the field lost the focus
+    -->
+   
+   <Input
+      value="{/recipient/name}"
+      description="Hello {/recipient/name}"
+      valueLiveUpdate="true"
+      width="60%"/>
 </mvc:View>
