@@ -1,0 +1,6 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   controllerName="sap.ui.walkthrough.controller.App.App">
+   <Text text="Hello World"/> 
+</mvc:View>
