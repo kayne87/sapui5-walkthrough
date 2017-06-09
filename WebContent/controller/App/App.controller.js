@@ -14,19 +14,7 @@ function (Controller, MessageToast, JSONModel, ResourceModel) {
 		*/
 		
 		onInit : function () {
-			var oData = {
-	            recipient : {
-	            	name : "World"
-	            }
-			};
-			var oModel = new JSONModel(oData);
 			
-			var i18nModel = new ResourceModel({
-				bundleName: "sap.ui.walkthrough.i18n.i18n"
-	        });
-			
-			this.getView().setModel(oModel);
-	        this.getView().setModel(i18nModel, "i18n");
       },
 		
 		onShowHello : function () {
