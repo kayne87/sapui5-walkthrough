@@ -15,12 +15,26 @@
 		        }'>
 		</script>
 
+		<!-- 
+			The shell control is now the outermost control of our app and automatically 
+			displays a so-called letterbox, if the screen size is larger than a certain width, 
+			all we need to do is to assign our component to the aggregation app of the shell.
+			
+			Note
+			We do not add the Shell control to the declarative UI definition in the XML view, 
+			because apps that run in an external shell, like the SAP Fiori launchpad, 
+			there will already be a shell around the component UI.
+		 -->
+
 		<script>
 			sap.ui.getCore().attachInit(function () {
-				new sap.ui.core.ComponentContainer({
-	            	name : "sap.ui.walkthrough"
-	            }).placeAt("content");
-	         });
+				new sap.m.Shell({
+					app : new sap.ui.core.ComponentContainer({
+						name : "sap.ui.walkthrough",
+						height : "100%"
+					})
+				}).placeAt("content");
+			});
 		</script>
 
 	</head>
