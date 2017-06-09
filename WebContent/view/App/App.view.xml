@@ -1,19 +1,26 @@
 <mvc:View
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
-   controllerName="sap.ui.walkthrough.controller.App.App">
-   <Button
-      text="{i18n>showHelloButtonText}"
-      press="onShowHello"/>
+   controllerName="sap.ui.walkthrough.controller.App.App"
+   displayBlock="true">
    
-   <!-- 
-   		If you remove valueLiveUpdate="true" the databinding effect is made
-   		when the field lost the focus
-    -->
-   
-   <Input
-      value="{/recipient/name}"
-      description="{i18n>helloMsgSimple} {/recipient/name}"
-      valueLiveUpdate="true"
-      width="60%"/>
+	<App>
+		<pages>
+			<Page title="{i18n>homePageTitle}">
+				<content>
+					<Panel headerTest="{i18n>helloPanelTitle}">
+						<content>
+							<Button text="{i18n>showHelloButtonText}"
+						      		press="onShowHello"/>
+						   	
+						   	<Input value="{/recipient/name}"
+							       description="{i18n>helloMsgSimple} {/recipient/name}"
+							       valueLiveUpdate="true"
+							       width="60%"/>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>   
 </mvc:View>
