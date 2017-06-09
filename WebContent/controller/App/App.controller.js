@@ -21,16 +21,22 @@ function (Controller, MessageToast, JSONModel, ResourceModel) {
 			};
 			var oModel = new JSONModel(oData);
 			
-			/*var i18n = new ResourceModel({
-				bundle
-			})*/
+			var i18nModel = new ResourceModel({
+				bundleName: "sap.ui.walkthrough.i18n.i18n"
+	        });
 			
-				
 			this.getView().setModel(oModel);
+	        this.getView().setModel(i18nModel, "i18n");
       },
 		
 		onShowHello : function () {
-			MessageToast.show("Hello world with Message Toast.");
+			// read msg from i18n model
+			var oBundle = this.getView().getModel("i18n").getResourceBundle();
+			var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+			var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+			
+			// show message
+			MessageToast.show(sMsg);
 		}
 	});
 });

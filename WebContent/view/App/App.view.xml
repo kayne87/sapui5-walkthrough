@@ -3,7 +3,7 @@
    xmlns:mvc="sap.ui.core.mvc"
    controllerName="sap.ui.walkthrough.controller.App.App">
    <Button
-      text="Say Hello"
+      text="{i18n>showHelloButtonText}"
       press="onShowHello"/>
    
    <!-- 
@@ -13,7 +13,7 @@
    
    <Input
       value="{/recipient/name}"
-      description="Hello {/recipient/name}"
+      description="{i18n>helloMsgSimple} {/recipient/name}"
       valueLiveUpdate="true"
       width="60%"/>
 </mvc:View>
