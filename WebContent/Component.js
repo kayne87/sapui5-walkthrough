@@ -16,7 +16,7 @@ sap.ui.define([
 	
 	return UIComponent.extend("sap.ui.walkthrough.Component", {
 		metadata:{
-			rootView: "sap.ui.walkthrough.view.App.App"
+			manifest: "json"
 		},
 
 		init : function () {
