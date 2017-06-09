@@ -1,8 +1,9 @@
 sap.ui.define([
    "sap/ui/core/UIComponent",
    "sap/ui/model/json/JSONModel",
-   "sap/ui/model/resource/ResourceModel"
-], function (UIComponent, JSONModel, ResourceModel) {
+   "sap/ui/model/resource/ResourceModel",
+   "sap/ui/walkthrough/component/dialogs/DialogManager"
+], function (UIComponent, JSONModel, ResourceModel, DialogManager) {
 
 	"use strict";
 	
@@ -19,6 +20,11 @@ sap.ui.define([
 			manifest: "json"
 		},
 
+		/**
+		 * @var sap/ui/walkthrough/component/dialogs/DialogManager
+		 */
+		_dialogManager: null,
+		
 		init : function () {
 			// call the init function of the parent
 			UIComponent.prototype.init.apply(this, arguments);
@@ -36,6 +42,12 @@ sap.ui.define([
 			
 			this.setModel(oModel);
 	        this.setModel(i18nModel, "i18n");
+	        
+	        this._dialogManager = new DialogManager(this.getRootControl());
+		},
+		
+		openHelloDialog : function () {
+			this._dialogManager.open("helloDialog");
 		}
 	});
 });
