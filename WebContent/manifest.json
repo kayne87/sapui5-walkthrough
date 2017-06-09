@@ -39,6 +39,11 @@
 					"bundleName": "sap.ui.walkthrough.i18n.i18n"
 				}
 			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "style/main.css"
+			}]
 		}
 	}
 }

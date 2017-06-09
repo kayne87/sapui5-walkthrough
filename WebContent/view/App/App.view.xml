@@ -4,19 +4,24 @@
    controllerName="sap.ui.walkthrough.controller.App.App"
    displayBlock="true">
    
-	<App>
+	<App class="myAppDemoWT">
 		<pages>
 			<Page title="{i18n>homePageTitle}">
 				<content>
-					<Panel headerTest="{i18n>helloPanelTitle}">
+					<Panel headerText="{i18n>helloPanelTitle}"
+						   class="sapUiResponsiveMargin"
+						   width="auto">
 						<content>
 							<Button text="{i18n>showHelloButtonText}"
-						      		press="onShowHello"/>
+						      		press="onShowHello"
+						      		class="sapUiSmallMarginEnd myCustomButton" />
 						   	
 						   	<Input value="{/recipient/name}"
-							       description="{i18n>helloMsgSimple} {/recipient/name}"
 							       valueLiveUpdate="true"
-							       width="60%"/>
+							       width="60%" />
+							       
+							<Text text="{i18n>helloMsgSimple} {/recipient/name}"
+								  class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" />
 						</content>
 					</Panel>
 				</content>
