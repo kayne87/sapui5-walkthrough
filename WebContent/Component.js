@@ -35,7 +35,8 @@ sap.ui.define([
 	            }
 			};
 			var oModel = new JSONModel(oData);
-			
+			var oInvoice = this.getModel("invoice");
+			var self = this;
 			var i18nModel = new ResourceModel({
 				bundleName: "sap.ui.walkthrough.i18n.i18n"
 	        });
@@ -43,11 +44,22 @@ sap.ui.define([
 			this.setModel(oModel);
 	        this.setModel(i18nModel, "i18n");
 	        
+	        oInvoice.attachRequestCompleted(function(){
+	        	self.onInvoiceLoaded.apply(self, arguments);
+	        });
+	        
 	        this._dialogManager = new DialogManager(this.getRootControl());
 		},
 		
 		openHelloDialog : function () {
 			this._dialogManager.open("helloDialog");
+		},
+		
+		onInvoiceLoaded: function(){
+			var oInvoice = this.getModel("invoice");
+			var json = oInvoice.getJSON();
+			var oParsed = JSON.parse(json);
+			
 		}
 	});
 });

@@ -1,14 +1,13 @@
-<mvc:View
-   xmlns="sap.m"
-   xmlns:mvc="sap.ui.core.mvc"
-   controllerName="sap.ui.walkthrough.controller.App.App"
-   displayBlock="true">
-   
+<mvc:View xmlns="sap.m"
+   		  xmlns:mvc="sap.ui.core.mvc"
+   		  controllerName="sap.ui.walkthrough.controller.App.App"
+   		  displayBlock="true">
 	<App class="myAppDemoWT">
 		<pages>
 			<Page title="{i18n>homePageTitle}">
 				<content>
 					<mvc:XMLView viewName="sap.ui.walkthrough.view.Panels.HelloPanel"/>
+					<mvc:XMLView viewName="sap.ui.walkthrough.view.Panels.InvoiceList"/>
 				</content>
 			</Page>
 		</pages>
