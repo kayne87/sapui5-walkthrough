@@ -53,13 +53,6 @@ sap.ui.define([
 		
 		openHelloDialog : function () {
 			this._dialogManager.open("helloDialog");
-		},
-		
-		/*onInvoiceLoaded: function(){
-			var oInvoice = this.getModel("invoice");
-			var json = oInvoice.getJSON();
-			var oParsed = JSON.parse(json);
-			
-		}*/
+		}
 	});
 });
