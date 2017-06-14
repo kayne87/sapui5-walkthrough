@@ -34,7 +34,7 @@
 	},
 	"sap.ui5": {
 		"_version": "1.44.15",
-		"rootView": "sap.ui.walkthrough.view.App.App",
+		"rootView": "sap.ui.walkthrough.index",
 		"dependencies": {
 			"minUI5Version": "1.30",
 			"libs": {
@@ -52,9 +52,38 @@
 				"dataSource": "invoiceRemote"
   			}
 		},
+
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.walkthrough.app._pages",
+				"controlId": "app",
+				"controlAggregation": "pages"
+	  		},
+	  		"routes": [{
+				"pattern": "",
+				"name": "overview",
+				"target": "overview"
+			},{
+				"pattern": "detail/{invoicePath}",
+				"name": "detail",
+				"target": "detail"
+			}],
+			
+			"targets": {
+				"overview": {
+					"viewName": "Overview"
+				},
+				"detail": {
+					"viewName": "Detail"
+				}
+			}
+		},
+		
 		"resources": {
 			"css": [{
-				"uri": "style/main.css"
+				"uri": "index.css"
 			}]
 		}
 	}

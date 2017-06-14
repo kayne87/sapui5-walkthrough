@@ -8,7 +8,7 @@ sap.ui.define([
 function (Controller, MessageToast, JSONModel, ResourceModel) {
 	"use strict";
    
-	return Controller.extend("sap.ui.walkthrough.controller.App.App", {
+	return Controller.extend("sap.ui.walkthrough.index", {
 		onInit : function () {
 			
 		}

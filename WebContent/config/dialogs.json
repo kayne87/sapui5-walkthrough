@@ -1,0 +1,6 @@
+{
+	"helloDialog": {
+		"view": "sap.ui.walkthrough.dialogs.hello.fragment.HelloDialog",
+		"controller": "sap.ui.walkthrough.dialogs.hello.controller.HelloDialog"
+	}
+}

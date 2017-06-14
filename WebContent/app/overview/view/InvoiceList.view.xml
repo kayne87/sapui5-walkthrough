@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap.ui.walkthrough.controller.Panels.InvoiceList"
+<mvc:View controllerName="sap.ui.walkthrough.app.overview.controller.InvoiceList"
 		  xmlns="sap.m"
 		  xmlns:mvc="sap.ui.core.mvc">
 	<List id="invoiceList"
@@ -35,7 +35,9 @@
 							numberUnit="{view>/currency}" 
 							numberState="{= ${invoice>Status} !== 'A' ? 
 											(${invoice>Status} === 'C' ? 'Success' : 'Warning') 
-										: 'Error' }">
+										: 'Error' }"
+							type="Navigation"
+							press="onPress">
 				<!-- <attributes>
 					<ObjectAttribute title="{i18n>provider}" text="{invoice>ShipperName}" />
 				</attributes>-->

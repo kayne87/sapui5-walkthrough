@@ -7,7 +7,7 @@ sap.ui.define([
 ], function (Controller, JSONModel, formatter, Filter, FilterOperator) {
 	"use strict";
 
-	return Controller.extend("sap.ui.walkthrough.controller.Panels.InvoiceList", {
+	return Controller.extend("sap.ui.walkthrough.app.overview.controller.InvoiceList", {
 		formatter: formatter,
 
 		onInit : function () {
@@ -16,21 +16,8 @@ sap.ui.define([
 				currency: "EUR",
 				test: self.test
 			});
-			/*var oInvoiceModel = this.getOwnerComponent().getModel("invoice");
-			var aSorter = []
-			
-			console.log(oInvoiceModel);
-			
-			window.setTimeout(function(){
-				console.log(oInvoiceModel.getJSON());
-				
-				
-				
-			}, 1000);*/
 			
 			this.getView().setModel(oViewModel, "view");
-			//aSorter.push(new sap.ui.model.Sorter(, true, false));
-			
 		},
 
 		onFilterInvoices : function (oEvent) {
@@ -54,16 +41,15 @@ sap.ui.define([
 			// filter binding
 			var oList = this.getView().byId("invoiceList");
 			var oBinding = oList.getBinding("items");
-			oBinding.filter(aFilter);
-			
-			
-			/*var aSorters = [];
-			aSorters.push(new sap.ui.model.Sorter("ShipperName", false, true));
-			aSorters.push(new sap.ui.model.Sorter("ProductName", false, false));
-			
-			oBinding.aSorters = aSorters;
-			oBinding.applySort();*/
-			
+			oBinding.filter(aFilter);	
+		},
+		
+		onPress: function (oEvent) {
+			var oItem = oEvent.getSource();
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("detail", {
+				invoicePath: oItem.getBindingContext("invoice").getPath().substr(1)
+			});
 		}
 	});
 });

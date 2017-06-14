@@ -1,8 +1,8 @@
 sap.ui.define([
-   "sap/ui/core/UIComponent",
-   "sap/ui/model/json/JSONModel",
-   "sap/ui/model/resource/ResourceModel",
-   "sap/ui/walkthrough/component/dialogs/DialogManager"
+	"sap/ui/core/UIComponent",
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/model/resource/ResourceModel",
+	"sap/ui/walkthrough/utils/DialogManager"
 ], function (UIComponent, JSONModel, ResourceModel, DialogManager) {
 
 	"use strict";
@@ -21,7 +21,7 @@ sap.ui.define([
 		},
 
 		/**
-		 * @var sap/ui/walkthrough/component/dialogs/DialogManager
+		 * @var sap/ui/walkthrough/utils/DialogManager
 		 */
 		_dialogManager: null,
 		
@@ -44,15 +44,15 @@ sap.ui.define([
 			this.setModel(oModel);
 	        this.setModel(i18nModel, "i18n");
 	        
-	        /*oInvoice.attachRequestCompleted(function(){
-	        	self.onInvoiceLoaded.apply(self, arguments);
-	        });*/
+	        //DialogManager initialization
+	        this._dialogManager = new DialogManager.getInstance(this.getRootControl());
 	        
-	        this._dialogManager = new DialogManager(this.getRootControl());
+	        // create the views based on the url/hash
+			this.getRouter().initialize();
 		},
 		
 		openHelloDialog : function () {
-			this._dialogManager.open("helloDialog");
+			
 		}
 	});
 });

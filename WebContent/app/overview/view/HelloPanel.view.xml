@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap.ui.walkthrough.controller.Panels.HelloPanel"
+<mvc:View controllerName="sap.ui.walkthrough.app.overview.controller.HelloPanel"
 		  xmlns="sap.m"
 		  xmlns:mvc="sap.ui.core.mvc">
 
